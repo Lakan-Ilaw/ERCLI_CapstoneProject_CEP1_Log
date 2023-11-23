@@ -1,0 +1,1227 @@
+Started by user admin
+Obtained Jenkinsfile from git https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP1.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP1.git # timeout=10
+Fetching upstream changes from https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP1.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.42.0'
+ > git fetch --tags --force --progress -- https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP1.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 2466b4911ba20082e6df2e9e71a6c93b672ee306 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 2466b4911ba20082e6df2e9e71a6c93b672ee306 # timeout=10
+Commit message: "Update Ansible_Playbook.yaml"
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Prepare Environment)
+[Pipeline] echo
+Initialize Environment
+[Pipeline] echo
+Tag: latest | Docker Hub User: lakanilaw | Container Name: ercli-asi-insurance_cep1 | Port: 8081
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Clone Repository)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP1.git # timeout=10
+Fetching upstream changes from https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP1.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.42.0'
+ > git fetch --tags --force --progress -- https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP1.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 2466b4911ba20082e6df2e9e71a6c93b672ee306 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 2466b4911ba20082e6df2e9e71a6c93b672ee306 # timeout=10
+Commit message: "Update Ansible_Playbook.yaml"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Maven Build)
+[Pipeline] sh
++ /usr/bin/mvn clean package
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36mcom.project.insurance:insure-me[0;1m >-------------------[m
+[[1;34mINFO[m] [1mBuilding Insure-me 1.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.2.0:clean[m [1m(default-clean)[m @ [36minsure-me[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36minsure-me[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 31 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.1:compile[m [1m(default-compile)[m @ [36minsure-me[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 5 source files to /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36minsure-me[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.1:testCompile[m [1m(default-testCompile)[m @ [36minsure-me[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36minsure-me[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.project.insurance.insureme.[1mInsureMeApplicationTests[m
+00:00:37.690 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+00:00:37.700 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+00:00:37.734 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.project.insurance.insureme.InsureMeApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+00:00:37.743 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.project.insurance.insureme.InsureMeApplicationTests], using SpringBootContextLoader
+00:00:37.747 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.project.insurance.insureme.InsureMeApplicationTests]: class path resource [com/project/insurance/insureme/InsureMeApplicationTests-context.xml] does not exist
+00:00:37.747 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.project.insurance.insureme.InsureMeApplicationTests]: class path resource [com/project/insurance/insureme/InsureMeApplicationTestsContext.groovy] does not exist
+00:00:37.748 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.project.insurance.insureme.InsureMeApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+00:00:37.748 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.project.insurance.insureme.InsureMeApplicationTests]: InsureMeApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:00:37.791 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.project.insurance.insureme.InsureMeApplicationTests]
+00:00:37.848 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1/target/classes/com/project/insurance/insureme/InsureMeApplication.class]
+00:00:37.862 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.project.insurance.insureme.InsureMeApplication for test class com.project.insurance.insureme.InsureMeApplicationTests
+00:00:37.953 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.project.insurance.insureme.InsureMeApplicationTests]: using defaults.
+00:00:37.955 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+00:00:37.979 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4ddbbdf8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3f67593e, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1ab06251, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@41ab013, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@14bee915, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1115ec15, org.springframework.test.context.transaction.TransactionalTestExecutionListener@82ea68c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@59e505b2, org.springframework.test.context.event.EventPublishingTestExecutionListener@3af0a9da, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@43b9fd5, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@79dc5318, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@8e50104, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@37e4d7bb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6f7923a5, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@74a6f9c1]
+00:00:37.984 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@69f1a286 testClass = InsureMeApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7922d892 testClass = InsureMeApplicationTests, locations = '{}', classes = '{class com.project.insurance.insureme.InsureMeApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5fa07e12, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1649b0e6, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@65f095f8, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@e7edb54, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@34f5090e, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@9660f4e], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.4)
+
+2023-11-23 00:00:38.357  INFO 5925 --- [           main] c.p.i.insureme.InsureMeApplicationTests  : Starting InsureMeApplicationTests using Java 11.0.20.1 on ip-172-31-31-58 with PID 5925 (started by jenkins in /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1)
+2023-11-23 00:00:38.358  INFO 5925 --- [           main] c.p.i.insureme.InsureMeApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2023-11-23 00:00:39.210  INFO 5925 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-23 00:00:39.267  INFO 5925 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interfaces.
+2023-11-23 00:00:39.909  INFO 5925 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-23 00:00:40.136  INFO 5925 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-23 00:00:40.220  INFO 5925 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-23 00:00:40.269  INFO 5925 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-11-23 00:00:40.446  INFO 5925 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-23 00:00:40.573  INFO 5925 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-11-23 00:00:41.180  INFO 5925 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-23 00:00:41.188  INFO 5925 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-23 00:00:41.801  WARN 5925 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-23 00:00:42.147  INFO 5925 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-11-23 00:00:42.438  INFO 5925 --- [           main] c.p.i.insureme.InsureMeApplicationTests  : Started InsureMeApplicationTests in 4.405 seconds (JVM running for 5.481)
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.007 s - in com.project.insurance.insureme.[1mInsureMeApplicationTests[m
+2023-11-23 00:00:42.671  INFO 5925 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-23 00:00:42.672  INFO 5925 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-11-23 00:00:42.683  INFO 5925 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-23 00:00:42.702  INFO 5925 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 3, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.2:jar[m [1m(default-jar)[m @ [36minsure-me[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1/target/insure-me-1.0.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:2.7.4:repackage[m [1m(repackage)[m @ [36minsure-me[0;1m ---[m
+[[1;34mINFO[m] Replacing main artifact with repackaged archive
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  9.895 s
+[[1;34mINFO[m] Finished at: 2023-11-23T00:00:43Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Publish Test Reports)
+[Pipeline] publishHTML
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at PROJECT level /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1/target/surefire-reports to /var/lib/jenkins/jobs/ERCLI-CapstoneProject-CEP1/htmlreports/HTML_20Report
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Image Build)
+[Pipeline] echo
+Creating Docker image
+[Pipeline] sh
++ docker build -t lakanilaw/ercli-asi-insurance_cep1:latest --pull --no-cache .
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 142B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [auth] library/openjdk:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/openjdk:11
+#4 DONE 0.1s
+
+#5 [1/2] FROM docker.io/library/openjdk:11@sha256:99bac5bf83633e3c7399aed725c8415e7b569b54e03e4599e580fc9cdb7c21ab
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 40.48MB 0.3s done
+#6 DONE 0.3s
+
+#7 [2/2] COPY target/*.jar app.jar
+#7 DONE 0.7s
+
+#8 exporting to image
+#8 exporting layers
+#8 exporting layers 0.2s done
+#8 writing image sha256:6a13238fbe6838fb1209c079e027e7cdc37076f9b2f693191b5c85c50ffe3018 done
+#8 naming to docker.io/lakanilaw/ercli-asi-insurance_cep1:latest done
+#8 DONE 0.2s
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Image Scan)
+[Pipeline] echo
+Scanning Docker image for vulnerabilities
+[Pipeline] sh
++ trivy image --severity HIGH,CRITICAL lakanilaw/ercli-asi-insurance_cep1:latest
+2023-11-23T00:00:46.965Z	[34mINFO[0m	Vulnerability scanning is enabled
+2023-11-23T00:00:46.965Z	[34mINFO[0m	Secret scanning is enabled
+2023-11-23T00:00:46.965Z	[34mINFO[0m	If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2023-11-23T00:00:46.965Z	[34mINFO[0m	Please see also https://aquasecurity.github.io/trivy/v0.47/docs/scanner/secret/#recommendation for faster secret detection
+2023-11-23T00:00:56.688Z	[34mINFO[0m	Detected OS: debian
+2023-11-23T00:00:56.688Z	[34mINFO[0m	Detecting Debian vulnerabilities...
+2023-11-23T00:00:56.710Z	[34mINFO[0m	Number of language-specific files: 1
+2023-11-23T00:00:56.710Z	[34mINFO[0m	Detecting jar vulnerabilities...
+
+lakanilaw/ercli-asi-insurance_cep1:latest (debian 11.4)
+=======================================================
+Total: 146 (HIGH: 115, CRITICAL: 31)
+
+┌──────────────────────┬────────────────┬──────────┬──────────────┬─────────────────────────┬─────────────────────────┬──────────────────────────────────────────────────────────────┐
+│       Library        │ Vulnerability  │ Severity │    Status    │    Installed Version    │      Fixed Version      │                            Title                             │
+├──────────────────────┼────────────────┼──────────┼──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ bash                 │ CVE-2022-3715  │ HIGH     │ affected     │ 5.1-2+deb11u1           │                         │ a heap-buffer-overflow in valid_parameter_transform          │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-3715                    │
+├──────────────────────┼────────────────┼──────────┼──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ curl                 │ CVE-2021-22945 │ CRITICAL │ fixed        │ 7.74.0-1.3+deb11u1      │ 7.74.0-1.3+deb11u2      │ curl: use-after-free and double-free in MQTT sending         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-22945                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-32207 │          │              │                         │                         │ Unpreserved file permissions                                 │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-32207                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-32221 │          │              │                         │ 7.74.0-1.3+deb11u5      │ POST following PUT confusion                                 │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-32221                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-23914 │          │ will_not_fix │                         │                         │ HSTS ignored on multiple requests                            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-23914                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-38545 │          │ fixed        │                         │ 7.74.0-1.3+deb11u10     │ curl: heap based buffer overflow in the SOCKS5 proxy         │
+│                      │                │          │              │                         │                         │ handshake                                                    │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-38545                   │
+│                      ├────────────────┼──────────┤              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2021-22946 │ HIGH     │              │                         │ 7.74.0-1.3+deb11u2      │ Requirement to use TLS not properly enforced for IMAP, POP3, │
+│                      │                │          │              │                         │                         │ and FTP...                                                   │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-22946                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-22576 │          │              │                         │                         │ curl: OAUTH2 bearer bypass in connection re-use              │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-22576                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-27775 │          │              │                         │                         │ curl: bad local IPv6 connection reuse                        │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-27775                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-27781 │          │              │                         │                         │ CERTINFO never-ending busy-loop                              │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-27781                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-27782 │          │              │                         │                         │ TLS and SSH connection too eager reuse                       │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-27782                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-42916 │          │ will_not_fix │                         │                         │ HSTS bypass via IDN                                          │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-42916                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-43551 │          │              │                         │                         │ HSTS bypass via IDN                                          │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-43551                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-27533 │          │ fixed        │                         │ 7.74.0-1.3+deb11u8      │ TELNET option IAC injection                                  │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-27533                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-27534 │          │              │                         │                         │ SFTP path ~ resolving discrepancy                            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-27534                   │
+├──────────────────────┼────────────────┤          ├──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ e2fsprogs            │ CVE-2022-1304  │          │ affected     │ 1.46.2-2                │                         │ e2fsprogs: out-of-bounds read/write via crafted filesystem   │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-1304                    │
+├──────────────────────┼────────────────┼──────────┼──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ git                  │ CVE-2022-23521 │ CRITICAL │ fixed        │ 1:2.30.2-1              │ 1:2.30.2-1+deb11u1      │ git: gitattributes parsing integer overflow                  │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-23521                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-41903 │          │              │                         │                         │ git: Heap overflow in `git archive`, `git log --format`      │
+│                      │                │          │              │                         │                         │ leading to RCE...                                            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-41903                   │
+│                      ├────────────────┼──────────┤              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-24765 │ HIGH     │              │                         │                         │ git: On multi-user machines Git users might find themselves  │
+│                      │                │          │              │                         │                         │ unexpectedly in a...                                         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-24765                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-29187 │          │              │                         │                         │ git: Bypass of safe.directory protections                    │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-29187                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-39260 │          │              │                         │                         │ git shell function that splits command arguments can lead to │
+│                      │                │          │              │                         │                         │ arbitrary heap...                                            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-39260                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-23946 │          │              │                         │ 1:2.30.2-1+deb11u2      │ git: git apply: a path outside the working tree can be       │
+│                      │                │          │              │                         │                         │ overwritten...                                               │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-23946                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-25652 │          │ affected     │                         │                         │ git: by feeding specially crafted input to `git apply        │
+│                      │                │          │              │                         │                         │ --reject`, a path...                                         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-25652                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-29007 │          │              │                         │                         │ git: arbitrary configuration injection when renaming or      │
+│                      │                │          │              │                         │                         │ deleting a section from a...                                 │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-29007                   │
+├──────────────────────┼────────────────┼──────────┼──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ git-man              │ CVE-2022-23521 │ CRITICAL │ fixed        │                         │ 1:2.30.2-1+deb11u1      │ git: gitattributes parsing integer overflow                  │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-23521                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-41903 │          │              │                         │                         │ git: Heap overflow in `git archive`, `git log --format`      │
+│                      │                │          │              │                         │                         │ leading to RCE...                                            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-41903                   │
+│                      ├────────────────┼──────────┤              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-24765 │ HIGH     │              │                         │                         │ git: On multi-user machines Git users might find themselves  │
+│                      │                │          │              │                         │                         │ unexpectedly in a...                                         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-24765                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-29187 │          │              │                         │                         │ git: Bypass of safe.directory protections                    │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-29187                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-39260 │          │              │                         │                         │ git shell function that splits command arguments can lead to │
+│                      │                │          │              │                         │                         │ arbitrary heap...                                            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-39260                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-23946 │          │              │                         │ 1:2.30.2-1+deb11u2      │ git: git apply: a path outside the working tree can be       │
+│                      │                │          │              │                         │                         │ overwritten...                                               │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-23946                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-25652 │          │ affected     │                         │                         │ git: by feeding specially crafted input to `git apply        │
+│                      │                │          │              │                         │                         │ --reject`, a path...                                         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-25652                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-29007 │          │              │                         │                         │ git: arbitrary configuration injection when renaming or      │
+│                      │                │          │              │                         │                         │ deleting a section from a...                                 │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-29007                   │
+├──────────────────────┼────────────────┼──────────┼──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libapr1              │ CVE-2022-24963 │ CRITICAL │ fixed        │ 1.7.0-6+deb11u1         │ 1.7.0-6+deb11u2         │ apr: integer overflow/wraparound in apr_encode               │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-24963                   │
+├──────────────────────┼────────────────┼──────────┤              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libc-bin             │ CVE-2021-3999  │ HIGH     │              │ 2.31-13+deb11u3         │ 2.31-13+deb11u4         │ Off-by-one buffer overflow/underflow in getcwd()             │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-3999                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-4911  │          │              │                         │ 2.31-13+deb11u7         │ glibc: buffer overflow in ld.so leading to privilege         │
+│                      │                │          │              │                         │                         │ escalation                                                   │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-4911                    │
+├──────────────────────┼────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libc6                │ CVE-2021-3999  │          │              │                         │ 2.31-13+deb11u4         │ Off-by-one buffer overflow/underflow in getcwd()             │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-3999                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-4911  │          │              │                         │ 2.31-13+deb11u7         │ glibc: buffer overflow in ld.so leading to privilege         │
+│                      │                │          │              │                         │                         │ escalation                                                   │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-4911                    │
+├──────────────────────┼────────────────┤          ├──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libcom-err2          │ CVE-2022-1304  │          │ affected     │ 1.46.2-2                │                         │ e2fsprogs: out-of-bounds read/write via crafted filesystem   │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-1304                    │
+├──────────────────────┼────────────────┼──────────┼──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libcurl3-gnutls      │ CVE-2022-32221 │ CRITICAL │ fixed        │ 7.74.0-1.3+deb11u2      │ 7.74.0-1.3+deb11u5      │ POST following PUT confusion                                 │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-32221                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-23914 │          │ will_not_fix │                         │                         │ HSTS ignored on multiple requests                            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-23914                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-38545 │          │ fixed        │                         │ 7.74.0-1.3+deb11u10     │ curl: heap based buffer overflow in the SOCKS5 proxy         │
+│                      │                │          │              │                         │                         │ handshake                                                    │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-38545                   │
+│                      ├────────────────┼──────────┼──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-42916 │ HIGH     │ will_not_fix │                         │                         │ HSTS bypass via IDN                                          │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-42916                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-43551 │          │              │                         │                         │ HSTS bypass via IDN                                          │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-43551                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-27533 │          │ fixed        │                         │ 7.74.0-1.3+deb11u8      │ TELNET option IAC injection                                  │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-27533                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-27534 │          │              │                         │                         │ SFTP path ~ resolving discrepancy                            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-27534                   │
+├──────────────────────┼────────────────┼──────────┤              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libcurl4             │ CVE-2021-22945 │ CRITICAL │              │ 7.74.0-1.3+deb11u1      │ 7.74.0-1.3+deb11u2      │ curl: use-after-free and double-free in MQTT sending         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-22945                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-32207 │          │              │                         │                         │ Unpreserved file permissions                                 │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-32207                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-32221 │          │              │                         │ 7.74.0-1.3+deb11u5      │ POST following PUT confusion                                 │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-32221                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-23914 │          │ will_not_fix │                         │                         │ HSTS ignored on multiple requests                            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-23914                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-38545 │          │ fixed        │                         │ 7.74.0-1.3+deb11u10     │ curl: heap based buffer overflow in the SOCKS5 proxy         │
+│                      │                │          │              │                         │                         │ handshake                                                    │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-38545                   │
+│                      ├────────────────┼──────────┤              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2021-22946 │ HIGH     │              │                         │ 7.74.0-1.3+deb11u2      │ Requirement to use TLS not properly enforced for IMAP, POP3, │
+│                      │                │          │              │                         │                         │ and FTP...                                                   │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-22946                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-22576 │          │              │                         │                         │ curl: OAUTH2 bearer bypass in connection re-use              │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-22576                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-27775 │          │              │                         │                         │ curl: bad local IPv6 connection reuse                        │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-27775                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-27781 │          │              │                         │                         │ CERTINFO never-ending busy-loop                              │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-27781                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-27782 │          │              │                         │                         │ TLS and SSH connection too eager reuse                       │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-27782                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-42916 │          │ will_not_fix │                         │                         │ HSTS bypass via IDN                                          │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-42916                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-43551 │          │              │                         │                         │ HSTS bypass via IDN                                          │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-43551                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-27533 │          │ fixed        │                         │ 7.74.0-1.3+deb11u8      │ TELNET option IAC injection                                  │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-27533                   │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-27534 │          │              │                         │                         │ SFTP path ~ resolving discrepancy                            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-27534                   │
+├──────────────────────┼────────────────┼──────────┼──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libdb5.3             │ CVE-2019-8457  │ CRITICAL │ affected     │ 5.3.28+dfsg1-0.8        │                         │ heap out-of-bound read in function rtreenode()               │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2019-8457                    │
+├──────────────────────┼────────────────┼──────────┼──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libexpat1            │ CVE-2022-40674 │ HIGH     │ fixed        │ 2.2.10-2+deb11u3        │ 2.2.10-2+deb11u4        │ expat: a use-after-free in the doContent function in         │
+│                      │                │          │              │                         │                         │ xmlparse.c                                                   │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-40674                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-43680 │          │              │                         │ 2.2.10-2+deb11u5        │ use-after free caused by overeager destruction of a shared   │
+│                      │                │          │              │                         │                         │ DTD in XML_ExternalEntityParserCreate...                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-43680                   │
+├──────────────────────┼────────────────┤          ├──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libext2fs2           │ CVE-2022-1304  │          │ affected     │ 1.46.2-2                │                         │ e2fsprogs: out-of-bounds read/write via crafted filesystem   │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-1304                    │
+├──────────────────────┼────────────────┤          │              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libgcrypt20          │ CVE-2021-33560 │          │              │ 1.8.7-6                 │                         │ mishandles ElGamal encryption because it lacks exponent      │
+│                      │                │          │              │                         │                         │ blinding to address a side-channel...                        │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-33560                   │
+├──────────────────────┼────────────────┤          ├──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libgnutls30          │ CVE-2022-2509  │          │ fixed        │ 3.7.1-5+deb11u1         │ 3.7.1-5+deb11u2         │ Double free during gnutls_pkcs7_verify                       │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-2509                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0361  │          │              │                         │ 3.7.1-5+deb11u3         │ timing side-channel in the TLS RSA key exchange code         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-0361                    │
+├──────────────────────┼────────────────┤          │              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libgssapi-krb5-2     │ CVE-2022-42898 │          │              │ 1.18.3-6+deb11u1        │ 1.18.3-6+deb11u3        │ integer overflow vulnerabilities in PAC parsing              │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-42898                   │
+├──────────────────────┤                │          │              │                         │                         │                                                              │
+│ libk5crypto3         │                │          │              │                         │                         │                                                              │
+│                      │                │          │              │                         │                         │                                                              │
+├──────────────────────┤                │          │              │                         │                         │                                                              │
+│ libkrb5-3            │                │          │              │                         │                         │                                                              │
+│                      │                │          │              │                         │                         │                                                              │
+├──────────────────────┤                │          │              │                         │                         │                                                              │
+│ libkrb5support0      │                │          │              │                         │                         │                                                              │
+│                      │                │          │              │                         │                         │                                                              │
+├──────────────────────┼────────────────┼──────────┤              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libksba8             │ CVE-2022-3515  │ CRITICAL │              │ 1.5.0-3                 │ 1.5.0-3+deb11u1         │ libksba: integer overflow may lead to remote code execution  │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-3515                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-47629 │          │              │                         │ 1.5.0-3+deb11u2         │ libksba: integer overflow to code execution                  │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-47629                   │
+├──────────────────────┼────────────────┼──────────┼──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libldap-2.4-2        │ CVE-2023-2953  │ HIGH     │ affected     │ 2.4.57+dfsg-3+deb11u1   │                         │ null pointer dereference in ber_memalloc_x function          │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-2953                    │
+├──────────────────────┼────────────────┤          ├──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libncurses6          │ CVE-2022-29458 │          │ fixed        │ 6.2+20201114-2          │ 6.2+20201114-2+deb11u1  │ segfaulting OOB read                                         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-29491 │          │              │                         │ 6.2+20201114-2+deb11u2  │ ncurses: Local users can trigger security-relevant memory    │
+│                      │                │          │              │                         │                         │ corruption via malformed data                                │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-29491                   │
+├──────────────────────┼────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libncursesw6         │ CVE-2022-29458 │          │              │                         │ 6.2+20201114-2+deb11u1  │ segfaulting OOB read                                         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-29491 │          │              │                         │ 6.2+20201114-2+deb11u2  │ ncurses: Local users can trigger security-relevant memory    │
+│                      │                │          │              │                         │                         │ corruption via malformed data                                │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-29491                   │
+├──────────────────────┼────────────────┤          ├──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libnghttp2-14        │ CVE-2023-44487 │          │ affected     │ 1.43.0-1                │                         │ HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable   │
+│                      │                │          │              │                         │                         │ to a DDoS attack...                                          │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-44487                   │
+├──────────────────────┼────────────────┼──────────┼──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libpcre2-8-0         │ CVE-2022-1586  │ CRITICAL │ fixed        │ 10.36-2                 │ 10.36-2+deb11u1         │ pcre2: Out-of-bounds read in compile_xclass_matchingpath in  │
+│                      │                │          │              │                         │                         │ pcre2_jit_compile.c                                          │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-1586                    │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-1587  │          │              │                         │                         │ pcre2: Out-of-bounds read in get_recurse_data_length in      │
+│                      │                │          │              │                         │                         │ pcre2_jit_compile.c                                          │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-1587                    │
+├──────────────────────┼────────────────┼──────────┼──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libperl5.32          │ CVE-2020-16156 │ HIGH     │ affected     │ 5.32.1-4+deb11u2        │                         │ Bypass of verification of signatures in CHECKSUMS files      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2020-16156                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-31484 │          │              │                         │                         │ perl: CPAN.pm does not verify TLS certificates when          │
+│                      │                │          │              │                         │                         │ downloading distributions over HTTPS...                      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-31484                   │
+├──────────────────────┼────────────────┼──────────┤              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libpython3.9-minimal │ CVE-2021-29921 │ CRITICAL │              │ 3.9.2-1                 │                         │ python-ipaddress: Improper input validation of octal strings │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-29921                   │
+│                      ├────────────────┼──────────┤              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2015-20107 │ HIGH     │              │                         │                         │ python: mailcap: findmatch() function does not sanitize the  │
+│                      │                │          │              │                         │                         │ second argument                                              │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2015-20107                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2020-10735 │          │              │                         │                         │ int() type in PyLong_FromString() does not limit amount of   │
+│                      │                │          │              │                         │                         │ digits converting text...                                    │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2020-10735                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2021-3737  │          │              │                         │                         │ HTTP client possible infinite loop on a 100 Continue         │
+│                      │                │          │              │                         │                         │ response                                                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-3737                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-0391  │          │              │                         │                         │ urllib.parse does not sanitize URLs containing ASCII newline │
+│                      │                │          │              │                         │                         │ and tabs                                                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-0391                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-42919 │          │              │                         │                         │ local privilege escalation via the multiprocessing           │
+│                      │                │          │              │                         │                         │ forkserver start method                                      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-42919                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-45061 │          │              │                         │                         │ CPU denial of service via inefficient IDNA decoder           │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-45061                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-24329 │          │              │                         │                         │ python: urllib.parse url blocklisting bypass                 │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-24329                   │
+├──────────────────────┼────────────────┼──────────┤              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libpython3.9-stdlib  │ CVE-2021-29921 │ CRITICAL │              │                         │                         │ python-ipaddress: Improper input validation of octal strings │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-29921                   │
+│                      ├────────────────┼──────────┤              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2015-20107 │ HIGH     │              │                         │                         │ python: mailcap: findmatch() function does not sanitize the  │
+│                      │                │          │              │                         │                         │ second argument                                              │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2015-20107                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2020-10735 │          │              │                         │                         │ int() type in PyLong_FromString() does not limit amount of   │
+│                      │                │          │              │                         │                         │ digits converting text...                                    │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2020-10735                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2021-3737  │          │              │                         │                         │ HTTP client possible infinite loop on a 100 Continue         │
+│                      │                │          │              │                         │                         │ response                                                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-3737                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-0391  │          │              │                         │                         │ urllib.parse does not sanitize URLs containing ASCII newline │
+│                      │                │          │              │                         │                         │ and tabs                                                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-0391                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-42919 │          │              │                         │                         │ local privilege escalation via the multiprocessing           │
+│                      │                │          │              │                         │                         │ forkserver start method                                      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-42919                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-45061 │          │              │                         │                         │ CPU denial of service via inefficient IDNA decoder           │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-45061                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-24329 │          │              │                         │                         │ python: urllib.parse url blocklisting bypass                 │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-24329                   │
+├──────────────────────┼────────────────┤          │              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libsqlite3-0         │ CVE-2021-31239 │          │              │ 3.34.1-3                │                         │ sqlite: denial of service via the appendvfs.c function       │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-31239                   │
+├──────────────────────┼────────────────┤          │              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libss2               │ CVE-2022-1304  │          │              │ 1.46.2-2                │                         │ e2fsprogs: out-of-bounds read/write via crafted filesystem   │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-1304                    │
+├──────────────────────┼────────────────┤          │              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libssh2-1            │ CVE-2020-22218 │          │              │ 1.9.0-2                 │                         │ use-of-uninitialized-value in _libssh2_transport_read        │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2020-22218                   │
+├──────────────────────┼────────────────┤          ├──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libssl1.1            │ CVE-2022-4450  │          │ fixed        │ 1.1.1n-0+deb11u3        │ 1.1.1n-0+deb11u4        │ double free after calling PEM_read_bio_ex                    │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-4450                    │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0215  │          │              │                         │                         │ use-after-free following BIO_new_NDEF                        │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-0215                    │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0286  │          │              │                         │                         │ X.400 address type confusion in X.509 GeneralName            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-0286                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0464  │          │              │                         │ 1.1.1n-0+deb11u5        │ openssl: Denial of service by excessive resource usage in    │
+│                      │                │          │              │                         │                         │ verifying X509 policy...                                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-0464                    │
+├──────────────────────┼────────────────┼──────────┤              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libtasn1-6           │ CVE-2021-46848 │ CRITICAL │              │ 4.16.0-2                │ 4.16.0-2+deb11u1        │ Out-of-bound access in ETYPE_OK                              │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-46848                   │
+├──────────────────────┼────────────────┼──────────┤              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libtinfo6            │ CVE-2022-29458 │ HIGH     │              │ 6.2+20201114-2          │ 6.2+20201114-2+deb11u1  │ segfaulting OOB read                                         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-29491 │          │              │                         │ 6.2+20201114-2+deb11u2  │ ncurses: Local users can trigger security-relevant memory    │
+│                      │                │          │              │                         │                         │ corruption via malformed data                                │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-29491                   │
+├──────────────────────┼────────────────┤          │              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libtirpc-common      │ CVE-2021-46828 │          │              │ 1.3.1-1                 │ 1.3.1-1+deb11u1         │ libtirpc: DoS vulnerability with lots of connections         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-46828                   │
+├──────────────────────┤                │          │              │                         │                         │                                                              │
+│ libtirpc3            │                │          │              │                         │                         │                                                              │
+│                      │                │          │              │                         │                         │                                                              │
+├──────────────────────┼────────────────┤          ├──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libzstd1             │ CVE-2022-4899  │          │ affected     │ 1.4.8+dfsg-2.1          │                         │ zstd: mysql: buffer overrun in util.c                        │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-4899                    │
+├──────────────────────┼────────────────┤          │              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ logsave              │ CVE-2022-1304  │          │              │ 1.46.2-2                │                         │ e2fsprogs: out-of-bounds read/write via crafted filesystem   │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-1304                    │
+├──────────────────────┼────────────────┤          ├──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ ncurses-base         │ CVE-2022-29458 │          │ fixed        │ 6.2+20201114-2          │ 6.2+20201114-2+deb11u1  │ segfaulting OOB read                                         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-29491 │          │              │                         │ 6.2+20201114-2+deb11u2  │ ncurses: Local users can trigger security-relevant memory    │
+│                      │                │          │              │                         │                         │ corruption via malformed data                                │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-29491                   │
+├──────────────────────┼────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ ncurses-bin          │ CVE-2022-29458 │          │              │                         │ 6.2+20201114-2+deb11u1  │ segfaulting OOB read                                         │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-29491 │          │              │                         │ 6.2+20201114-2+deb11u2  │ ncurses: Local users can trigger security-relevant memory    │
+│                      │                │          │              │                         │                         │ corruption via malformed data                                │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-29491                   │
+├──────────────────────┼────────────────┼──────────┤              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ openssh-client       │ CVE-2023-38408 │ CRITICAL │              │ 1:8.4p1-5+deb11u1       │ 1:8.4p1-5+deb11u2       │ Remote code execution in ssh-agent PKCS#11 support           │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-38408                   │
+│                      ├────────────────┼──────────┼──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2021-41617 │ HIGH     │ affected     │                         │                         │ privilege escalation when AuthorizedKeysCommand or           │
+│                      │                │          │              │                         │                         │ AuthorizedPrincipalsCommand are configured                   │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-41617                   │
+├──────────────────────┼────────────────┤          ├──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ openssl              │ CVE-2022-4450  │          │ fixed        │ 1.1.1n-0+deb11u3        │ 1.1.1n-0+deb11u4        │ double free after calling PEM_read_bio_ex                    │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-4450                    │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0215  │          │              │                         │                         │ use-after-free following BIO_new_NDEF                        │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-0215                    │
+│                      ├────────────────┤          │              │                         │                         ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0286  │          │              │                         │                         │ X.400 address type confusion in X.509 GeneralName            │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-0286                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0464  │          │              │                         │ 1.1.1n-0+deb11u5        │ openssl: Denial of service by excessive resource usage in    │
+│                      │                │          │              │                         │                         │ verifying X509 policy...                                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-0464                    │
+├──────────────────────┼────────────────┤          ├──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ perl                 │ CVE-2020-16156 │          │ affected     │ 5.32.1-4+deb11u2        │                         │ Bypass of verification of signatures in CHECKSUMS files      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2020-16156                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-31484 │          │              │                         │                         │ perl: CPAN.pm does not verify TLS certificates when          │
+│                      │                │          │              │                         │                         │ downloading distributions over HTTPS...                      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-31484                   │
+├──────────────────────┼────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ perl-base            │ CVE-2020-16156 │          │              │                         │                         │ Bypass of verification of signatures in CHECKSUMS files      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2020-16156                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-31484 │          │              │                         │                         │ perl: CPAN.pm does not verify TLS certificates when          │
+│                      │                │          │              │                         │                         │ downloading distributions over HTTPS...                      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-31484                   │
+├──────────────────────┼────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ perl-modules-5.32    │ CVE-2020-16156 │          │              │                         │                         │ Bypass of verification of signatures in CHECKSUMS files      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2020-16156                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-31484 │          │              │                         │                         │ perl: CPAN.pm does not verify TLS certificates when          │
+│                      │                │          │              │                         │                         │ downloading distributions over HTTPS...                      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-31484                   │
+├──────────────────────┼────────────────┼──────────┤              ├─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ python3.9            │ CVE-2021-29921 │ CRITICAL │              │ 3.9.2-1                 │                         │ python-ipaddress: Improper input validation of octal strings │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-29921                   │
+│                      ├────────────────┼──────────┤              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2015-20107 │ HIGH     │              │                         │                         │ python: mailcap: findmatch() function does not sanitize the  │
+│                      │                │          │              │                         │                         │ second argument                                              │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2015-20107                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2020-10735 │          │              │                         │                         │ int() type in PyLong_FromString() does not limit amount of   │
+│                      │                │          │              │                         │                         │ digits converting text...                                    │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2020-10735                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2021-3737  │          │              │                         │                         │ HTTP client possible infinite loop on a 100 Continue         │
+│                      │                │          │              │                         │                         │ response                                                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-3737                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-0391  │          │              │                         │                         │ urllib.parse does not sanitize URLs containing ASCII newline │
+│                      │                │          │              │                         │                         │ and tabs                                                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-0391                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-42919 │          │              │                         │                         │ local privilege escalation via the multiprocessing           │
+│                      │                │          │              │                         │                         │ forkserver start method                                      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-42919                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-45061 │          │              │                         │                         │ CPU denial of service via inefficient IDNA decoder           │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-45061                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-24329 │          │              │                         │                         │ python: urllib.parse url blocklisting bypass                 │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-24329                   │
+├──────────────────────┼────────────────┼──────────┤              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ python3.9-minimal    │ CVE-2021-29921 │ CRITICAL │              │                         │                         │ python-ipaddress: Improper input validation of octal strings │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-29921                   │
+│                      ├────────────────┼──────────┤              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2015-20107 │ HIGH     │              │                         │                         │ python: mailcap: findmatch() function does not sanitize the  │
+│                      │                │          │              │                         │                         │ second argument                                              │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2015-20107                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2020-10735 │          │              │                         │                         │ int() type in PyLong_FromString() does not limit amount of   │
+│                      │                │          │              │                         │                         │ digits converting text...                                    │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2020-10735                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2021-3737  │          │              │                         │                         │ HTTP client possible infinite loop on a 100 Continue         │
+│                      │                │          │              │                         │                         │ response                                                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2021-3737                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-0391  │          │              │                         │                         │ urllib.parse does not sanitize URLs containing ASCII newline │
+│                      │                │          │              │                         │                         │ and tabs                                                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-0391                    │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-42919 │          │              │                         │                         │ local privilege escalation via the multiprocessing           │
+│                      │                │          │              │                         │                         │ forkserver start method                                      │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-42919                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-45061 │          │              │                         │                         │ CPU denial of service via inefficient IDNA decoder           │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-45061                   │
+│                      ├────────────────┤          │              │                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-24329 │          │              │                         │                         │ python: urllib.parse url blocklisting bypass                 │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-24329                   │
+├──────────────────────┼────────────────┼──────────┼──────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ zlib1g               │ CVE-2022-37434 │ CRITICAL │ fixed        │ 1:1.2.11.dfsg-2+deb11u1 │ 1:1.2.11.dfsg-2+deb11u2 │ heap-based buffer over-read and overflow in inflate() in     │
+│                      │                │          │              │                         │                         │ inflate.c via a large...                                     │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2022-37434                   │
+│                      ├────────────────┤          ├──────────────┤                         ├─────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-45853 │          │ will_not_fix │                         │                         │ zlib: integer overflow and resultant heap-based buffer       │
+│                      │                │          │              │                         │                         │ overflow in zipOpenNewFileInZip4_6                           │
+│                      │                │          │              │                         │                         │ https://avd.aquasec.com/nvd/cve-2023-45853                   │
+└──────────────────────┴────────────────┴──────────┴──────────────┴─────────────────────────┴─────────────────────────┴──────────────────────────────────────────────────────────────┘
+2023-11-23T00:00:56.877Z	[34mINFO[0m	Table result includes only package filenames. Use '--format json' option to get the full path to the package file.
+
+Java (jar)
+==========
+Total: 7 (HIGH: 6, CRITICAL: 1)
+
+┌──────────────────────────────────────────────────────────────┬──────────────────┬──────────┬────────┬───────────────────┬───────────────────────────────┬──────────────────────────────────────────────────────────────┐
+│                           Library                            │  Vulnerability   │ Severity │ Status │ Installed Version │         Fixed Version         │                            Title                             │
+├──────────────────────────────────────────────────────────────┼──────────────────┼──────────┼────────┼───────────────────┼───────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.fasterxml.jackson.core:jackson-databind (app.jar)        │ CVE-2022-42003   │ HIGH     │ fixed  │ 2.13.4            │ 2.12.7.1, 2.13.4.2            │ deep wrapper array nesting wrt UNWRAP_SINGLE_VALUE_ARRAYS    │
+│                                                              │                  │          │        │                   │                               │ https://avd.aquasec.com/nvd/cve-2022-42003                   │
+├──────────────────────────────────────────────────────────────┼──────────────────┤          │        ├───────────────────┼───────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.h2database:h2 (app.jar)                                  │ CVE-2022-45868   │          │        │ 2.1.214           │ 2.2.220                       │ The web-based admin console in H2 Database Engine through    │
+│                                                              │                  │          │        │                   │                               │ 2.1.214 can ...                                              │
+│                                                              │                  │          │        │                   │                               │ https://avd.aquasec.com/nvd/cve-2022-45868                   │
+├──────────────────────────────────────────────────────────────┼──────────────────┤          │        ├───────────────────┼───────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.springframework.boot:spring-boot-autoconfigure (app.jar) │ CVE-2023-20883   │          │        │ 2.7.4             │ 3.0.7, 2.7.12, 2.6.15, 2.5.15 │ Spring Boot Welcome Page DoS Vulnerability                   │
+│                                                              │                  │          │        │                   │                               │ https://avd.aquasec.com/nvd/cve-2023-20883                   │
+├──────────────────────────────────────────────────────────────┼──────────────────┤          │        ├───────────────────┼───────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.springframework:spring-core (app.jar)                    │ CVE-2023-20863   │          │        │ 5.3.23            │ 6.0.8, 5.3.27, 5.2.24.RELEASE │ Spring Expression DoS Vulnerability                          │
+│                                                              │                  │          │        │                   │                               │ https://avd.aquasec.com/nvd/cve-2023-20863                   │
+├──────────────────────────────────────────────────────────────┼──────────────────┼──────────┤        │                   ├───────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.springframework:spring-web (app.jar)                     │ CVE-2016-1000027 │ CRITICAL │        │                   │ 6.0.0                         │ spring: HttpInvokerServiceExporter readRemoteInvocation      │
+│                                                              │                  │          │        │                   │                               │ method untrusted java deserialization                        │
+│                                                              │                  │          │        │                   │                               │ https://avd.aquasec.com/nvd/cve-2016-1000027                 │
+├──────────────────────────────────────────────────────────────┼──────────────────┼──────────┤        ├───────────────────┼───────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.yaml:snakeyaml (app.jar)                                 │ CVE-2022-1471    │ HIGH     │        │ 1.30              │ 2.0                           │ SnakeYaml: Constructor Deserialization Remote Code Execution │
+│                                                              │                  │          │        │                   │                               │ https://avd.aquasec.com/nvd/cve-2022-1471                    │
+│                                                              ├──────────────────┤          │        │                   ├───────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                              │ CVE-2022-25857   │          │        │                   │ 1.31                          │ snakeyaml: Denial of Service due to missing nested depth     │
+│                                                              │                  │          │        │                   │                               │ limitation for collections...                                │
+│                                                              │                  │          │        │                   │                               │ https://avd.aquasec.com/nvd/cve-2022-25857                   │
+└──────────────────────────────────────────────────────────────┴──────────────────┴──────────┴────────┴───────────────────┴───────────────────────────────┴──────────────────────────────────────────────────────────────┘
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Check Docker Image in DockerHub)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ docker pull lakanilaw/ercli-asi-insurance_cep1:latest
+Error response from daemon: manifest for lakanilaw/ercli-asi-insurance_cep1:latest not found: manifest unknown: manifest unknown
++ echo failed
+[Pipeline] echo
+Image lakanilaw/ercli-asi-insurance_cep1:latest does not exist yet in DockerHub. Proceeding to the next stage.
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Publishing Image to DockerHub)
+[Pipeline] echo
+Pushing the docker image to DockerHub
+[Pipeline] withCredentials
+Masking supported pattern matches of $dockerPassword
+[Pipeline] {
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [dockerPassword]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ docker login -u lakanilaw -p ****
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /var/lib/jenkins/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[Pipeline] sh
++ docker push lakanilaw/ercli-asi-insurance_cep1:latest
+The push refers to repository [docker.io/lakanilaw/ercli-asi-insurance_cep1]
+0f81c4d48617: Preparing
+7b7f3078e1db: Preparing
+826c3ddbb29c: Preparing
+b626401ef603: Preparing
+9b55156abf26: Preparing
+293d5db30c9f: Preparing
+03127cdb479b: Preparing
+9c742cd6c7a5: Preparing
+293d5db30c9f: Waiting
+03127cdb479b: Waiting
+9c742cd6c7a5: Waiting
+b626401ef603: Mounted from lakanilaw/ercli-asi-insurance_test12
+826c3ddbb29c: Mounted from lakanilaw/ercli-asi-insurance_test12
+9b55156abf26: Mounted from lakanilaw/ercli-asi-insurance_test12
+7b7f3078e1db: Mounted from lakanilaw/ercli-asi-insurance_test12
+293d5db30c9f: Mounted from lakanilaw/ercli-asi-insurance_test12
+03127cdb479b: Mounted from lakanilaw/ercli-asi-insurance_test12
+9c742cd6c7a5: Mounted from lakanilaw/ercli-asi-insurance_test12
+0f81c4d48617: Pushed
+latest: digest: sha256:7efd96f3e6c5920bad8f6ef98ff6da9b62448ff203179f3c9f7835d5eb78196d size: 2007
+[Pipeline] echo
+Image push complete
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deleting Local Docker Image)
+[Pipeline] echo
+Deleting the docker image from local machine
+[Pipeline] sh
++ docker rmi lakanilaw/ercli-asi-insurance_cep1:latest
+Untagged: lakanilaw/ercli-asi-insurance_cep1:latest
+Untagged: lakanilaw/ercli-asi-insurance_cep1@sha256:7efd96f3e6c5920bad8f6ef98ff6da9b62448ff203179f3c9f7835d5eb78196d
+Deleted: sha256:6a13238fbe6838fb1209c079e027e7cdc37076f9b2f693191b5c85c50ffe3018
+[Pipeline] echo
+Image deletion complete
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Terraform Initialization & Planning)
+[Pipeline] echo
+Fetching files from repository
+[Pipeline] sh
++ cp -r /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1/Ansible_Playbook.yaml /home/elmerlakanilawy/CapstoneProject/ERCLI-CEP1/
+[Pipeline] sh
++ cp -r /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP1/Terraform_Configuration.tf /home/elmerlakanilawy/CapstoneProject/ERCLI-CEP1/
+[Pipeline] sh
++ ls -lrt
+[Pipeline] echo
+total 52
+-rw-r--r-- 1 jenkins jenkins  1751 Nov 22 18:44 pom.xml
+-rw-r--r-- 1 jenkins jenkins  6734 Nov 22 18:44 mvnw.cmd
+-rwxr-xr-x 1 jenkins jenkins 10284 Nov 22 18:44 mvnw
+-rw-r--r-- 1 jenkins jenkins   323 Nov 22 18:44 README.md
+-rw-r--r-- 1 jenkins jenkins   105 Nov 22 18:44 Dockerfile
+drwxr-xr-x 4 jenkins jenkins  4096 Nov 22 18:44 src
+-rw-r--r-- 1 jenkins jenkins  3353 Nov 22 19:16 Jenkinsfile
+-rw-r--r-- 1 jenkins jenkins  1777 Nov 22 20:52 Terraform_Configuration.tf
+-rw-r--r-- 1 jenkins jenkins  1857 Nov 22 21:15 Ansible_Playbook.yaml
+drwxr-xr-x 9 jenkins jenkins  4096 Nov 23 00:00 target
+[Pipeline] echo
+Initializing Terraform
+[Pipeline] sh
++ terraform -chdir=/home/elmerlakanilawy/CapstoneProject/ERCLI-CEP1/ init
+
+[0m[1mInitializing the backend...[0m
+
+[0m[1mInitializing provider plugins...[0m
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/null from the dependency lock file
+- Using previously-installed hashicorp/aws v5.26.0
+- Using previously-installed hashicorp/null v3.2.2
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+[Pipeline] echo
+Terraform Planning
+[Pipeline] sh
++ terraform -chdir=/home/elmerlakanilawy/CapstoneProject/ERCLI-CEP1/ plan
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.ERCLI_CP1_Ubuntu[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ERCLI_CP1_Ubuntu" {
+      [32m+[0m[0m ami                                  = "ami-0fc5d935ebf8bc3bc"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t2.micro"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = "ERCLI_CEP1_Key"
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Name" = "ERCLI_CP1_Ubuntu1"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Name" = "ERCLI_CP1_Ubuntu1"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+    }
+
+[1m  # aws_security_group.ERCLI_CP1_Security_Group[0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group" "ERCLI_CP1_Security_Group" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = "Managed by Terraform"
+      [32m+[0m[0m egress                 = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m description      = "Allow outgoing apt install traffic (SSH) to any IPv4 address"
+              [32m+[0m[0m from_port        = 22
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "tcp"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 22
+            },
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m description      = "Allow outgoing apt update traffic (HTTP and HTTPS) to any IPv4 address"
+              [32m+[0m[0m from_port        = 80
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "tcp"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 443
+            },
+        ]
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m description      = "Allow all incoming traffic from any IPv4 address"
+              [32m+[0m[0m from_port        = 0
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "-1"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 0
+            },
+        ]
+      [32m+[0m[0m name                   = (known after apply)
+      [32m+[0m[0m name_prefix            = "ERCLI_CP1_SecGroup"
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags_all               = (known after apply)
+      [32m+[0m[0m vpc_id                 = (known after apply)
+    }
+
+[1m  # null_resource.Installation_via_Ansible[0][0m will be created
+[0m  [32m+[0m[0m resource "null_resource" "Installation_via_Ansible" {
+      [32m+[0m[0m id = (known after apply)
+    }
+
+[1mPlan:[0m 3 to add, 0 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+[Pipeline] echo
+Terraform Initialization complete
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Terraform Application)
+[Pipeline] echo
+Applying Terraform configuration
+[Pipeline] sh
++ terraform -chdir=/home/elmerlakanilawy/CapstoneProject/ERCLI-CEP1/ apply --auto-approve
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.ERCLI_CP1_Ubuntu[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ERCLI_CP1_Ubuntu" {
+      [32m+[0m[0m ami                                  = "ami-0fc5d935ebf8bc3bc"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t2.micro"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = "ERCLI_CEP1_Key"
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Name" = "ERCLI_CP1_Ubuntu1"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Name" = "ERCLI_CP1_Ubuntu1"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+    }
+
+[1m  # aws_security_group.ERCLI_CP1_Security_Group[0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group" "ERCLI_CP1_Security_Group" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = "Managed by Terraform"
+      [32m+[0m[0m egress                 = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m description      = "Allow outgoing apt install traffic (SSH) to any IPv4 address"
+              [32m+[0m[0m from_port        = 22
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "tcp"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 22
+            },
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m description      = "Allow outgoing apt update traffic (HTTP and HTTPS) to any IPv4 address"
+              [32m+[0m[0m from_port        = 80
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "tcp"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 443
+            },
+        ]
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m description      = "Allow all incoming traffic from any IPv4 address"
+              [32m+[0m[0m from_port        = 0
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "-1"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 0
+            },
+        ]
+      [32m+[0m[0m name                   = (known after apply)
+      [32m+[0m[0m name_prefix            = "ERCLI_CP1_SecGroup"
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags_all               = (known after apply)
+      [32m+[0m[0m vpc_id                 = (known after apply)
+    }
+
+[1m  # null_resource.Installation_via_Ansible[0][0m will be created
+[0m  [32m+[0m[0m resource "null_resource" "Installation_via_Ansible" {
+      [32m+[0m[0m id = (known after apply)
+    }
+
+[1mPlan:[0m 3 to add, 0 to change, 0 to destroy.
+[0m[0m[1maws_security_group.ERCLI_CP1_Security_Group: Creating...[0m[0m
+[0m[1maws_security_group.ERCLI_CP1_Security_Group: Creation complete after 2s [id=sg-013052924e469dfa9][0m
+[0m[1maws_instance.ERCLI_CP1_Ubuntu[0]: Creating...[0m[0m
+[0m[1maws_instance.ERCLI_CP1_Ubuntu[0]: Still creating... [10s elapsed][0m[0m
+[0m[1maws_instance.ERCLI_CP1_Ubuntu[0]: Still creating... [20s elapsed][0m[0m
+[0m[1maws_instance.ERCLI_CP1_Ubuntu[0]: Still creating... [30s elapsed][0m[0m
+[0m[1maws_instance.ERCLI_CP1_Ubuntu[0]: Creation complete after 32s [id=i-0f7e52599d3a3a7d6][0m
+[0m[1mnull_resource.Installation_via_Ansible[0]: Creating...[0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0]: Provisioning with 'local-exec'...[0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "max_retries=5\nretries=0\nwhile [ $retries -lt $max_retries ]; do\n  ssh -i /home/elmerlakanilawy/CapstoneProject/ERCLI-CEP1/ERCLI_CEP1_Key.pem -o ConnectTimeout=20 root@54.85.51.98 exit && break\n  retries=$((retries+1))\n  sleep 10\ndone\nansible-playbook -i '54.85.51.98,' Ansible_Playbook.yaml --private-key=/home/elmerlakanilawy/CapstoneProject/ERCLI-CEP1/ERCLI_CEP1_Key.pem\n"]
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mssh: connect to host 54.85.51.98 port 22: Connection refused
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [10s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mHost key verification failed.
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [20s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mHost key verification failed.
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [30s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mHost key verification failed.
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [40s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mHost key verification failed.
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [50s elapsed][0m[0m
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mPLAY [all] *********************************************************************
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mTASK [Gathering Facts] *********************************************************
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mok: [54.85.51.98]
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mTASK [Update apt package index] ************************************************
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [1m0s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [1m10s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mchanged: [54.85.51.98]
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mTASK [Install necessary packages] **********************************************
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mchanged: [54.85.51.98]
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mTASK [Create keyrings directory] ***********************************************
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mok: [54.85.51.98]
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mTASK [Add Docker's official GPG key] *******************************************
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mchanged: [54.85.51.98]
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mTASK [Set permissions for Docker's GPG key] ************************************
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mok: [54.85.51.98]
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mTASK [Add the Docker repository to Apt sources] ********************************
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mchanged: [54.85.51.98]
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mTASK [Update apt package index] ************************************************
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [1m20s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mchanged: [54.85.51.98]
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mTASK [Install the latest version of Docker CE and containerd] ******************
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [1m30s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [1m40s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mchanged: [54.85.51.98]
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mTASK [Verify Docker is installed] **********************************************
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [1m50s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mchanged: [54.85.51.98]
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mTASK [Run Docker image from Docker Hub] ****************************************
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [2m0s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mchanged: [54.85.51.98]
+
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0mPLAY RECAP *********************************************************************
+[0m[1mnull_resource.Installation_via_Ansible[0] (local-exec):[0m [0m54.85.51.98                : ok=11   changed=8    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[0m[1mnull_resource.Installation_via_Ansible[0]: Still creating... [2m10s elapsed][0m[0m
+[0m[1mnull_resource.Installation_via_Ansible[0]: Creation complete after 2m10s [id=3544533537206281142][0m
+[0m[1m[32m
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+[0m
+[Pipeline] echo
+Terraform apply complete
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
